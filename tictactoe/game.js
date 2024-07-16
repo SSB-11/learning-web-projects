@@ -5,7 +5,6 @@ class TicTacToe {
     }
 
     restartCells() {
-        alert("Restart");
         let cells = document.querySelectorAll(".cell");
         for (let cell of cells) {
             cell.innerHTML = ".";
@@ -13,10 +12,11 @@ class TicTacToe {
     }
 
     getCurrentPlayer() {
-        if (currentRound % 2 != 0) {
+        if (this.currentRound % 2 != 0) {
             return "X";
         } else {
             return "O";
         }
     }
+
 }
