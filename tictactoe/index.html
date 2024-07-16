@@ -14,8 +14,10 @@
     <main class="container w-75">
         <div class="d-flex flex-column text-center justify-content-center">
             <h1 class="my-3">Tic Tac Toe</h1>
-            <p class="mb-2">First Player starts as Player X and Second Player as Player O.</p>
-            <p class="mb-4">Click on the box to start playing.</p>
+            <div id="instructions">
+                <p class="mb-2">First Player starts as Player X and Second Player as Player O.</p>
+                <p class="mb-4">Click on the box to start playing.</p>
+            </div>
             <div class="grid">
                 <div class="row border-bottom">
                     <div class="cell col-4 py-5">
@@ -51,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <button id="restart-btn" type="button" class="btn btn-secondary my-3">Restart</button>            
+            <button id="restart-btn" type="button" class="btn btn-secondary my-3">Restart</button>
         </div>
 
     </main>

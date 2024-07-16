@@ -4,11 +4,11 @@ class TicTacToe {
         this.cells = document.querySelectorAll(".cell");
     }
 
-    restartCells() {
-        let cells = document.querySelectorAll(".cell");
-        for (let cell of cells) {
+    restart() {
+        for (let cell of this.cells) {
             cell.innerHTML = ".";
         }
+        this.currentRound = 1;
     }
 
     getCurrentPlayer() {
@@ -18,5 +18,21 @@ class TicTacToe {
             return "O";
         }
     }
+
+    playMove(cell) {
+        let player = this.getCurrentPlayer();
+        if (cell.innerHTML == "X" || cell.innerHTML == "O") {
+            return;
+        }
+
+        if (player == "X") {
+            cell.innerHTML = "X";
+        } else {
+            cell.innerHTML = "O";
+        }
+        this.currentRound++;
+    }
+
+    // Check if game is over
 
 }
