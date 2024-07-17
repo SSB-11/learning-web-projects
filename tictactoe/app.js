@@ -14,9 +14,15 @@ restartBtn.addEventListener("click", () => {
 });
 
 function printWinner() {
+    let msg;
+    if (!game.winner) {
+        msg = `Tie... No winner.`;
+    } else {
+        msg = `Player ${game.winner} wins!`;
+    }
     instructionsDiv.innerHTML = `
         <h5 class="my-3">
-            Player ${game.winner} wins!
+            ${msg}
         </h5>
     `;
 }
