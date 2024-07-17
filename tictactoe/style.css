@@ -3,10 +3,20 @@ html, body {
     box-sizing: border-box;
 }
 
+.cell {
+    min-width: 10rem;
+}
+
 .cell:hover {
     cursor: pointer;
 }
 
 .win-cell {
     background-color: mediumseagreen;
+}
+
+@media (max-width: 572px) {
+    .cell {
+        min-width: 6rem;
+    }
 }
