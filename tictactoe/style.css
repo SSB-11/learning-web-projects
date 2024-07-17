@@ -6,3 +6,7 @@ html, body {
 .cell:hover {
     cursor: pointer;
 }
+
+.win-cell {
+    background-color: mediumseagreen;
+}
