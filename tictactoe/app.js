@@ -1,7 +1,6 @@
-game = new TicTacToe();
-
-instructionsDiv = document.getElementById("instructions");
-restartBtn = document.getElementById("restart-btn");
+const game = new TicTacToe();
+const instructionsDiv = document.getElementById("instructions");
+const restartBtn = document.getElementById("restart-btn");
 
 restartBtn.addEventListener("click", () => {
     game.restart()
@@ -14,15 +13,33 @@ restartBtn.addEventListener("click", () => {
         </p>`;
 });
 
+function printWinner() {
+    instructionsDiv.innerHTML = `
+        <h5 class="my-3">
+            Player ${game.winner} wins!
+        </h5>
+    `;
+}
+
+function printCurrentPlayer() {
+    instructionsDiv.innerHTML = `
+        <h5 class="my-3">
+            Player ${game.getCurrentPlayer()}
+        </h5>
+    `;
+}
+
 for (let cell of game.cells) {
     cell.addEventListener("click", (e) => {
-        game.playMove(e.srcElement);
-        instructionsDiv.innerHTML = `
-            <h5 class="my-3">
-                Player ${game.getCurrentPlayer()}
-            </h5>
-        `;
-        
-        // Check if game is over
+        if (!game.gameOver) {
+            game.playMove(e.target);
+            if (!game.gameOver) {
+                printCurrentPlayer();
+                return;
+            }
+            printWinner();
+            return;
+        }
+        printWinner();
     });
 }
