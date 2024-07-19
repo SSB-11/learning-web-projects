@@ -11,6 +11,7 @@ class TicTacToe {
         this.currentRound = 1;
         this.winner = undefined;
         this.gameOver = false;
+        this.availableCells = this.updateAvailableCells();
         document.getElementById("win-line").classList.value = "hidden";
     }
 
@@ -73,19 +74,36 @@ class TicTacToe {
         );
     }
 
+    updateAvailableCells() {
+        if (this.gameOver) {
+            for (let cell of this.cells) {
+                cell.classList.add("inactive");
+            }
+            return null;
+        }
+
+        let availableCells = [];
+        for (let cell of this.cells) {
+            if (cell.textContent != "X" && cell.textContent != "O") {
+                availableCells.push(cell);
+                cell.classList.remove("inactive");
+            } else {
+                cell.classList.add("inactive");
+            }
+        }
+        return availableCells;
+    }
+
     playMove(cell) {
-        let player = this.getCurrentPlayer();
         if (cell.textContent == "X" || cell.textContent == "O" || this.gameOver == true) {
             return;
         }
-        if (player == "X") {
-            cell.textContent = "X";
-        } else {
-            cell.textContent = "O";
-        }
+        cell.textContent = this.getCurrentPlayer();
+        
         if (!this.isGameOver(this.getCurrentGridValues())) {
             this.currentRound++;
         }
+        this.updateAvailableCells();
     }
 
     isGameOver(grid) {
