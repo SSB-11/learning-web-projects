@@ -6,7 +6,7 @@ class TicTacToe {
 
     restart() {
         for (let cell of this.cells) {
-            cell.innerHTML = ".";
+            cell.textContent = ".";
         }
         this.currentRound = 1;
         this.winner = undefined;
@@ -24,7 +24,7 @@ class TicTacToe {
     getCurrentGridValues() {
         let grid = [];
         for (let cell of this.cells) {
-            grid.push(cell.innerHTML);
+            grid.push(cell.textContent);
         }
         return grid;
     }
@@ -74,13 +74,13 @@ class TicTacToe {
 
     playMove(cell) {
         let player = this.getCurrentPlayer();
-        if (cell.innerHTML == "X" || cell.innerHTML == "O" || this.gameOver == true) {
+        if (cell.textContent == "X" || cell.textContent == "O" || this.gameOver == true) {
             return;
         }
         if (player == "X") {
-            cell.innerHTML = "X";
+            cell.textContent = "X";
         } else {
-            cell.innerHTML = "O";
+            cell.textContent = "O";
         }
         if (!this.isGameOver(this.getCurrentGridValues())) {
             this.currentRound++;

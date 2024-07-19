@@ -4,13 +4,10 @@ const restartBtn = document.getElementById("restart-btn");
 
 restartBtn.addEventListener("click", () => {
     game.restart()
-    instructions.innerHTML = `
-        <p class="mb-2">
-            First Player starts as Player X and Second Player as Player O.
-        </p> 
-        <p class="mb-4">
-            Click on the box to start playing.
-        </p>`;
+    instructionsDiv.innerHTML = `
+        <p>First Player starts as <strong>Player X</strong> and Second Player as <strong>Player O</strong>.</p>
+        <p>Click on the box to start playing as <strong>X</strong>.</p>
+    `
 });
 
 function printWinner() {
@@ -21,17 +18,17 @@ function printWinner() {
         msg = `Player ${game.winner} wins!`;
     }
     instructionsDiv.innerHTML = `
-        <h5 class="my-3">
+        <h3>
             ${msg}
-        </h5>
+        </h3>
     `;
 }
 
 function printCurrentPlayer() {
     instructionsDiv.innerHTML = `
-        <h5 class="my-3">
+        <h3>
             Player ${game.getCurrentPlayer()}
-        </h5>
+        </h3>
     `;
 }
 
