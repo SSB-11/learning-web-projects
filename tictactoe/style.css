@@ -6,11 +6,13 @@
     --horizontal: 0;
     --diagonal-left: 45deg;
     --diagonal-right: -45deg;
+    --symbol-size: 200%;
 }
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -22,7 +24,6 @@ html, body {
 main {
     height: 100vh;
     display: flex;
-    box-sizing: border-box;
     justify-content: center;
     padding: 1rem;
 }
@@ -112,9 +113,13 @@ button {
     justify-content: center;
 }
 
-.column:nth-of-type(2) {
+.column:nth-of-type(2) .cell {
     border-left: 2px solid black;
     border-right: 2px solid black;
+}
+
+.column:nth-of-type(3) .cell {
+    border-left: 1.5px solid black;
 }
 
 .cell:nth-of-type(2) {
@@ -128,17 +133,36 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 200%;
+    font-size: var(--symbol-size);
+    color: rgb(86, 86, 86);
 }
 
-.cell:hover, button:hover {
+.cell:hover {
     cursor: pointer;
+    background-color: rgb(230, 230, 230);
+    font-size: 240%;
+    color: black;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: rgb(230, 230, 230);
+}
+
+.inactive {
+    color: black;
+}
+
+.inactive:hover {
+    background-color: transparent;
+    cursor: default;
+    font-size: var(--symbol-size);
 }
 
 .win-cell {
     background-color: mediumseagreen;
 }
-
 
 @media (max-width: 430px) {
     :root {
