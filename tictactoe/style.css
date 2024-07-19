@@ -140,49 +140,37 @@ button {
 }
 
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
+    :root {
+        --cell-size: 30vw;
+    }
+
     main {
         padding: 0;
     }
 
-    .grid {
-        --cell-size: 12vh;
-    }
     .cell {
         width: var(--cell-size);
         height: var(--cell-size);
     }
+    
     #win-line {
-        width: calc(var(--cell-size) * 2);
+        width: calc(var(--cell-size) * 3.2);
     }
+
     #win-line.diagonal {
-        width: calc(var(--cell-size) * 2.7);
-    }
-    #win-line.vertical.right {
-        margin-left: calc(var(--cell-size) * 1.2);
-    }
-    
-    #win-line.vertical.left {
-        margin-right: calc(var(--cell-size) * 1.2);
-    }
-    
-    #win-line.horizontal.top {
-        margin-bottom: calc(var(--cell-size) * 1.2);
-    }
-    
-    #win-line.horizontal.bottom {
-        margin-top: calc(var(--cell-size) * 1.2);
+        width: calc(var(--cell-size) * 4.5);
     }
 }
 
 @media (min-width: 1024px) {
     .grid {
         --cell-size: 15vh;
-    }
+    } 
     .cell {
         width: var(--cell-size);
         height: var(--cell-size);
-    }
+    } 
     #win-line {
         width: calc(var(--cell-size) * 2.5);
     }
