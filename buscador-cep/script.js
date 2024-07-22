@@ -1,5 +1,6 @@
 document.getElementById('cepForm').addEventListener('submit', e => {
     e.preventDefault();
+    const cepForm = document.getElementById("cepForm");
     const cep = document.getElementById('cepInput').value;
     const resultDiv = document.getElementById('result');
     const newSearchButton = document.getElementById('newSearch');
@@ -21,6 +22,7 @@ document.getElementById('cepForm').addEventListener('submit', e => {
             `;
             resultDiv.style.display = 'block';
             newSearchButton.style.display = 'block';
+            cepForm.style.display = 'none';
         })
         .catch(error => {
             resultDiv.innerHTML = `<p id="error">${error.message}</p>`;
@@ -33,4 +35,5 @@ document.getElementById('newSearch').addEventListener('click', function() {
     document.getElementById('cepInput').value = '';
     document.getElementById('result').style.display = 'none';
     document.getElementById('newSearch').style.display = 'none';
+    document.getElementById("cepForm").style.display = 'block';
 });
