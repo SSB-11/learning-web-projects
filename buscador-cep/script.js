@@ -8,6 +8,7 @@ document.getElementById('cepForm').addEventListener('submit', e => {
     fetch(`https://cep.awesomeapi.com.br/json/${cep}`)
         .then(response => {
             if (!response.ok) {
+                cepForm.style.display = 'none';
                 throw new Error('CEP inválido ou não encontrado');
             }
             return response.json();
