@@ -1,0 +1,20 @@
+body {
+    background-color: #f8f9fa;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+#result {
+    display: none;
+}
+
+#error, #errorMessage {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
