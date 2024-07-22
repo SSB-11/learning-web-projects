@@ -10,7 +10,5 @@ Projetos simples criados durante os estudos na Magna/AlmavivA Solutions para pra
 
 ## 🛠️ Ferramentas
 - [Buscador de CEP](https://ssb-11.github.io/learning-web-projects/buscador-cep/): um buscador de CEP simples, que retorna informações como nome da rua, cidade e estado.
-  
-  - **Status**: concluído. <br><br><img src="https://github.com/user-attachments/assets/88b79333-de5f-4ea2-8a10-1bf130880637" alt="Tela inicial do buscador de CEP." width="500"/>
 
-
+  - **Status**: concluído. <br><br><img src="imgs/buscador-cep.png" alt="Tela inicial do buscador de CEP." width="500"/>
