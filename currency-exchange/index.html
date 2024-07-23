@@ -10,6 +10,13 @@
 
     <body>
         <main class="container">
+            <form action="/" id="form" class="d-flex justify-content-center my-4">
+                <select name="currency" id="selectCurrency" class="custom-select me-2">
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                </select>
+                <button id="submitBtn" type="submit" class="btn btn-secondary btn-sm">Selecionar</button>
+            </form>
             <div id="visualization"></div>
         </main>
 
