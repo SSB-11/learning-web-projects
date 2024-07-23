@@ -10,12 +10,22 @@
 
     <body>
         <main class="container">
+            <h1 class="text-center">Cotações de Moedas</h1>
             <form action="/" id="form" class="d-flex justify-content-center my-4">
-                <select name="currency" id="selectCurrency" class="custom-select me-2">
-                    <option value="usd">USD</option>
-                    <option value="eur">EUR</option>
-                </select>
-                <button id="submitBtn" type="submit" class="btn btn-secondary btn-sm">Selecionar</button>
+                    <div class="form-group">
+                        <label for="numDays">Número de dias: </label>
+                        <input type="number" name="numDays" id="numDays" class="mx-2 text-center" placeholder="Ex.: 10 (Últimos 10 dias)">
+                    </div>
+                    <div class="form-group">
+                        <label for="selectCurrency">Moeda: </label>
+                        <select name="currency" id="selectCurrency" class="custom-select mx-2 h-100">
+                            <option value="usd" selected>USD</option>
+                            <option value="eur">EUR</option>
+                        </select>
+                    </div>
+                        <div class="form-group">
+                            <button id="submitBtn" type="submit" class="btn btn-secondary btn-sm">Selecionar</button>
+                        </div>
             </form>
             <div id="visualization"></div>
         </main>

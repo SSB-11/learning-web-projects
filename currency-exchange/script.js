@@ -6,7 +6,7 @@ let items = [];
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const selectCurrency = document.getElementById("selectCurrency");
-    const qtd_dias = 10;
+    const qtd_dias = 360; // limite = 360
     const currency = selectCurrency.value;
     fetch(`https://economia.awesomeapi.com.br/json/daily/${currency}/${qtd_dias}`)
         .then(response => {
@@ -44,7 +44,7 @@ form.addEventListener("submit", (e) => {
         .catch(error => {
             container.textContent = error;
         })
-});
+    });
 
 function extractDate(datetime) {
     return datetime.toISOString().split('T')[0];
